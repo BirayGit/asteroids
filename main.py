@@ -6,12 +6,23 @@ import pygame
 # import the connect_database function
 # and the database_version variable
 # from database.py into the current file
-import constants
+from constants import *
 
 def main():
+    pygame.init()
     print("Starting Asteroids!")
-    print(f"Screen width: {constants.SCREEN_WIDTH}")
-    print(f"Screen height: {constants.SCREEN_HEIGHT}")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
+    screen = pygame.display.set_mode(size=(SCREEN_WIDTH, SCREEN_HEIGHT))
+    
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+            
+        screen.fill("black")
+        pygame.display.flip()
+
 
 
 if __name__ == "__main__":
