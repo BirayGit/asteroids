@@ -19,11 +19,13 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    # Create groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
 
+    # Set up containers and instances
     Player.containers = (updatable, drawable)
     player = Player(player_x, player_y)
 
@@ -34,6 +36,7 @@ def main():
     Shot.containers = (shots, updatable, drawable)
 
     while True:
+        # Exit the game by pressing x
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
